@@ -120,6 +120,7 @@ public class Aim : MonoBehaviour
             }
             else continue;
         }
+        if(allTarget.Count == 0) return;
         SelectNewTarget();
     }
     public void SetTargetStatus(bool isTarget)
