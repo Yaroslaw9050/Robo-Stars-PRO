@@ -14,10 +14,6 @@ public class WindowsManager : MonoBehaviour
             window.SetActive(false);
         }
     }
-    private void Start()
-    {
-        OpenLayout("Loading");
-    }
     public void OpenLayout(string name)
     {
         foreach(GameObject window in windows)

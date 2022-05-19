@@ -12,6 +12,6 @@ public class NetworkStatistic : MonoBehaviourPunCallbacks
     }
     private void UpdateOnlineCounter()
     {
-        onlineCounterText.text = $"Players online: {PhotonNetwork.CountOfPlayersOnMaster}";
+        onlineCounterText.text = $"Players online: {PhotonNetwork.CountOfPlayers}";
     }
 }
