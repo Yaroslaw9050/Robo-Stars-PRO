@@ -559,7 +559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &266468824
 RectTransform:
   m_ObjectHideFlags: 0
@@ -836,7 +836,7 @@ GameObject:
   - component: {fileID: 560158903}
   - component: {fileID: 560158902}
   m_Layer: 5
-  m_Name: StopFindeBattle
+  m_Name: StopBattleFind_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2165,7 +2165,8 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 999
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9036181641338561985, guid: 6aaa27a4f9a1e3b44bb6b7df0d768a37, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6aaa27a4f9a1e3b44bb6b7df0d768a37, type: 3}
 --- !u!1 &1147866989
 GameObject:
@@ -5163,7 +5164,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Find battle...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5190,7 +5191,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 60
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
