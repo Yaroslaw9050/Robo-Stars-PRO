@@ -54,12 +54,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private void Update()
     {
         if(!pv.IsMine) return;
+
         AnimateControl();
         PlayerRotate();
     }
     private void FixedUpdate()
     {
         if(!pv.IsMine) return;
+
         controller.Move(currentMovement * Time.fixedDeltaTime); 
     }
     private void OnCameraMovement(InputAction.CallbackContext context)
