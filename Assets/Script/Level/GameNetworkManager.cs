@@ -4,12 +4,16 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using Photon.Pun;
 using System.IO;
+using UnityEngine.Events;
+
 
 public class GameNetworkManager : MonoBehaviourPunCallbacks
 {
+    public UnityEvent OnGameOwer;
+    public UnityEvent OnGameWin;
     [SerializeField] private GameObject allPlayerUI;
     private PhotonView pv;
-
+    
     private void Awake()
     {
         pv = gameObject.GetPhotonView();
@@ -21,7 +25,6 @@ public class GameNetworkManager : MonoBehaviourPunCallbacks
             Destroy(allPlayerUI);
             return;
         }
-        PhotonNetwork.Instantiate(Path.Combine("Player"), Vector3.zero, Quaternion.identity); 
     }
     public void OutOfBattle()
     {
