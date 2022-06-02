@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 using Photon.Pun;
-using System.IO;
-using UnityEngine.Events;
+using UnityEngine.Events; 
 
 
 public class GameNetworkManager : MonoBehaviourPunCallbacks
 {
-    public UnityEvent OnGameOwer;
+    public UnityEvent OnGameOver;
     public UnityEvent OnGameWin;
     [SerializeField] private GameObject allPlayerUI;
     private PhotonView pv;
@@ -22,14 +19,14 @@ public class GameNetworkManager : MonoBehaviourPunCallbacks
     {
         if(!pv.IsMine) 
         {
-            Destroy(allPlayerUI);
+            allPlayerUI.SetActive(false);
             return;
         }
     }
     public void OutOfBattle()
     {
-        PhotonNetwork.AutomaticallySyncScene = false;
-        PhotonNetwork.LeaveRoom(); 
+        PhotonNetwork.AutomaticallySyncScene = false; 
+        PhotonNetwork.Disconnect();
         SceneManager.LoadScene(0);
     }
     
