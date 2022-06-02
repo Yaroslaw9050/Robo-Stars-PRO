@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Photon.Pun;
 using UnityEngine.UI;
 using Photon.Realtime;
@@ -42,12 +40,11 @@ public class PlayerSetting : MonoBehaviourPunCallbacks
     public void UpdateHealt(int value)
     {
         healt -= value;
-
         if(healt <= 0)
         {
             if(!pv.IsMine) return;
-            SendDeadEvent();
-            gameManager.OnGameOwer.Invoke();
+            SendWinEvent();
+            gameManager.OnGameOver.Invoke();
         }
         healtBar.value = healt;  
     }
@@ -59,10 +56,13 @@ public class PlayerSetting : MonoBehaviourPunCallbacks
             gameManager.OnGameWin.Invoke();
         }
     }
-    private void SendDeadEvent()
+    private void SendWinEvent()
     {
-        object[] datas = null;
+        object[] datas = null; // масив даних, який можна передати через нашу подію. Він пустий, оскільки нас цікавить тільки активація події.
 
         PhotonNetwork.RaiseEvent(GAME_IS_WIN, datas, RaiseEventOptions.Default, SendOptions.SendUnreliable);
+        // Активуємо подію із нашим ключем.
+        // В Datas у нас пусто
+        // RiseEventOption дозволяє вказати чи буде кешуватись ця подія.
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
@@ -11,15 +9,9 @@ public class GamePlayerStatisticComponent : PlayerStatisticComponent
     [SerializeField] TMP_Text levelText;
     [SerializeField] TMP_Text currentEXP_Text;
     [SerializeField] Image fillEXP_Area;
-    private PlayerSetting playerSetting;
     private const int LOOSE_COEFFICIENT = 1;
     private const int WIN_COEFFICIENT = 3;
     private const int STANDAR_EXP_VALUE = 50;
-    public override void Awake()
-    {
-        base.Awake();
-        playerSetting = gameObject.GetComponentInChildren<PlayerSetting>();
-    }
     public void ShowWinInfo()
     {
         int value = (playerLevel * STANDAR_EXP_VALUE) * WIN_COEFFICIENT;
